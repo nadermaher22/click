@@ -1,0 +1,275 @@
+.logo img {
+  width: 160px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.userLoginSocial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.userLoginSocial p:first-child {
+  color: #000000;
+  font-weight: 600;
+  font-size: 30px;
+  margin-top: 2rem;
+}
+.or {
+  margin-top: 2.5rem;
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.socialLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1.7rem;
+}
+.socialLogin img {
+  cursor: pointer;
+}
+.socialLogin img:hover {
+  opacity: 0.7;
+}
+.userLoginForm {
+  margin-top: 3rem;
+  width: 100%;
+}
+.form-control {
+  border: none;
+  border-bottom: 1px solid#A9A9A9;
+  border-radius: 0;
+  border-width: 80%;
+  padding: 0.5rem 0;
+  font-size: 16px;
+  color: #7e7f83;
+}
+.form-control:focus {
+  box-shadow: none !important;
+}
+.loginFormIcons {
+  color: #545454;
+  border: 0px solid #ffffff;
+}
+.eyeIcon {
+  color: #c6c5c5;
+  cursor: pointer;
+}
+.eyeIcon .active {
+  color: rgb(49, 41, 41);
+}
+.forgotPassword {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #313131;
+}
+.loginButton {
+  width: 100%;
+  background: #000056;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 0.7rem;
+  border: none;
+}
+.newAccount p {
+  color: #838181;
+}
+.newAccount a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.3px;
+  color: #545454;
+  font-weight: bold;
+}
+.expertLink {
+  display: flex;
+  align-items: center;
+}
+.expertLink a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.3px;
+  color: #545454;
+  font-weight: bold;
+}
+.otherLogin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+.otherLogin img {
+  height: 50px;
+}
+.filterImg img {
+  filter: grayscale(100%);
+}
+.otherLogin a {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: -0.3px;
+  text-decoration: underline;
+  color: #545454;
+}
+.PhoneInputCountrySelectArrow {
+  display: none !important;
+}
+.PhoneInputCountry {
+  margin-right: 1rem !important;
+}
+/* Verify */
+.vetifyP {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: -0.3px;
+  color: #545454;
+}
+.otpNumbers {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 2rem;
+}
+.otpNumber {
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  margin-bottom: 2rem;
+  outline: none;
+  font-size: 28px;
+}
+.resendOTP {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.resendOTP p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  color: #7e7f83;
+}
+.resendOTP a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  letter-spacing: -0.3px;
+  text-decoration: underline;
+  color: #545454;
+}
+.react-tel-input .form-control {
+  width: 100% !important;
+  border: none !important;
+  border-bottom: 1px solid#A9A9A9 !important;
+  border-radius: 0 !important;
+  border-width: 80%;
+  padding: 0.5rem 0;
+  font-size: 16px;
+  color: #7e7f83;
+  outline: none;
+}
+.react-tel-input .flag-dropdown {
+  background-color: transparent !important;
+  border: none !important;
+}
+/* successful message */
+
+#card {
+  width: 320px;
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+#upper-side {
+  padding: 2em;
+  background-color: #8bc34a;
+  display: block;
+  color: #fff;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+#checkmark {
+  font-weight: lighter;
+  fill: #fff;
+  margin: -3.5em auto auto 20px;
+}
+#status {
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1em;
+  margin-top: -0.2em;
+  margin-bottom: 0;
+}
+#lower-side {
+  padding: 2em 2em 5em 2em;
+  background: #fff;
+  display: block;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+#message {
+  margin-top: -0.5em;
+  color: #757575;
+  letter-spacing: 1px;
+}
+#contBtn {
+  position: relative;
+  top: 1.5em;
+  text-decoration: none;
+  background: #8bc34a;
+  color: #fff;
+  margin: auto;
+  padding: 0.8em 3em;
+  -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+  -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+  box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+  border-radius: 25px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+#contBtn:hover {
+  -webkit-box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+  -moz-box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+  box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.sucImg {
+}
+
+@media (max-width: 768px) {
+  .otpNumbers {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,102 @@
+.greenColor {
+  color: rgba(0, 237, 133, 1);
+}
+.footer {
+  background-color: #303030;
+}
+.right {
+  height: 100%;
+}
+.footer .right .rightText {
+  color: white;
+}
+.percent {
+  font-weight: 600;
+  font-size: 96px;
+}
+.footer .right .rightText p {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.secondFooter .left {
+  background-color: rgba(3, 187, 106, 1);
+  height: 100%;
+}
+.footerBgColor {
+  background-color: rgba(49, 49, 49, 1);
+}
+.copyright {
+  color: rgba(212, 215, 221, 1);
+  font-weight: 400;
+  font-size: 17px;
+  padding-bottom: 2.5rem;
+}
+
+.listColor {
+  color: #d4d7dd;
+}
+.brandName {
+  color: #ffff;
+  margin-top: 6rem;
+}
+.fs-24 {
+  font-size: 24px;
+}
+.downloadBut img {
+  border-radius: 13px;
+}
+.downloadBut img:hover {
+  box-shadow: 1px 3px 10px 4px rgb(255 255 255 / 74%);
+  -webkit-box-shadow: 1px 3px 10px 4px rgb(255 255 255 / 74%);
+  -moz-box-shadow: 1px 3px 10px 4px rgb(255 255 255 / 74%);
+}
+/* media query */
+@media (max-width: 768px) {
+  .rightText {
+    text-align: center;
+  }
+  .brandName {
+    display: none;
+  }
+  .secondFooter .left {
+    padding-bottom: 2rem;
+  }
+  .ms0Mob {
+    margin-left: 0 !important;
+  }
+  .p2Mob {
+    padding: 1rem !important;
+  }
+  .gap-3 {
+    gap: 2rem;
+  }
+  .copyright {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 15px !important;
+  }
+  .percent {
+    font-size: 65px;
+  }
+  .footerImgMob {
+    width: 85% !important;
+    margin: auto;
+    display: block;
+  }
+  .m-0Mob {
+    margin: 0 !important;
+  }
+
+  .footer2ImgMob {
+    margin: auto !important;
+    display: block !important;
+    padding-top: 30px !important;
+  }
+  .socialMedia {
+    justify-content: center;
+    padding-bottom: 30px;
+    padding-top: 20px;
+  }
+}

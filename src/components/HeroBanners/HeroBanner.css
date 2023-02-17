@@ -1,0 +1,114 @@
+/* hero */
+.hero {
+  background: linear-gradient(103.41deg, #0bcc77 10.76%, #08a761 85.94%);
+}
+.tabletBg {
+  background: white;
+}
+.heroImg {
+  position: relative;
+  max-width: 100%;
+  z-index: 10;
+}
+.mbCust {
+  padding-bottom: 5rem;
+}
+.percentIcon {
+  font-size: 40px;
+}
+.heroImg::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: white;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  bottom: 19rem;
+  left: 33rem;
+  z-index: -1;
+}
+.tabletAfter::after {
+  display: none;
+}
+.macAfter::after {
+  bottom: 21rem;
+  left: 32rem;
+}
+.heroPercent {
+  font-weight: 600;
+  font-size: 50px;
+  color: #ffffff;
+}
+.heroDisc {
+  font-weight: 400;
+  font-size: 40px;
+  color: #313131;
+  margin: 0 0 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.secondLine {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.secondLine p:first-child {
+  color: #313131;
+  font-size: 46px;
+}
+.secondLine p:nth-child(2) {
+  font-weight: bold;
+  font-size: 60px;
+}
+.orderBtn {
+  margin-top: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  border: none;
+  height: 3.5rem;
+  width: 14rem;
+}
+.oderFont {
+  font-size: 25px;
+  color: #000056;
+}
+.tablet {
+  color: #000056;
+}
+.tabletBtn {
+  background: #313131;
+  color: white !important;
+}
+.tabletBtn span {
+  background: #313131;
+  color: white !important;
+}
+.macImg img {
+  width: 105% !important;
+}
+/* media query */
+@media (max-width: 768px) {
+  .order2Mob {
+    order: 2;
+    text-align: center;
+  }
+  .mt1Mob {
+    margin-top: 1rem;
+  }
+  .fs-40Mob {
+    font-size: 40px !important;
+  }
+  .justMob {
+    justify-content: center;
+  }
+  .p30Mob {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
