@@ -45,7 +45,7 @@ const LoginUser = () => {
         <div className="row">
           <div className="col-md-6 d-flex align-items-center flex-column">
             <div className="logo mb-4">
-              <img src={Logo} alt="logo" />
+              <img src={Logo} alt="logo0" />
             </div>
             <div className="userLoginImg">
               <img src={UserLoginImg} alt="user login" />
