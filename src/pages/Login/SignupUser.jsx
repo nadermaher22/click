@@ -1,7 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, CSSProperties } from "react";
+import FadeLoader from "react-spinners/FadeLoader";
 import axios from "axios";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assests/img/logo.png";
 import UserLoginImg from "../../assests/img/loginUser.png";
 import Facebook from "../../assests/img/facebook-login.png";
@@ -19,6 +20,14 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 
 const LoginUser = () => {
+  const override: CSSProperties = {
+    display: "block",
+    margin: "auto",
+  };
+  const navigate = useNavigate();
+  const [loadingInProgress, setLoading] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+
   const userRef = useRef();
   const errRef = useRef();
   const [passwordShown, setPasswordShown] = useState(false);
@@ -39,11 +48,12 @@ const LoginUser = () => {
   });
 
   useEffect(() => {
-    userRef.current.focus();
+    userRef?.current?.focus();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     axios
       .post("http://sbtechnology-001-site2.atempurl.com/api/Account/Register", {
         FullName: values.name,
@@ -53,8 +63,14 @@ const LoginUser = () => {
         Password: values.pass,
         CountryCodeId: values.CountryCode,
       })
-      .then((res) => setRegisterSuccess(true))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        localStorage.setItem("token", "loggedIn");
+        setRegisterSuccess(true);
+      })
+      .catch((res) => {
+        setLoading(false);
+        setErrMsg(res.response.data.Message);
+      });
   };
 
   return (
@@ -94,7 +110,7 @@ const LoginUser = () => {
                     Congratulations, your account has been successfully created.
                   </p>
                   <Link to="/LoginUser" id="contBtn">
-                    Continue
+                    Login
                   </Link>
                 </div>
               </div>
@@ -109,6 +125,7 @@ const LoginUser = () => {
                     <img src={Google} alt="google" />
                   </div>
                   <p className="or">- OR -</p>
+                  <p className="invalid">{errMsg}</p>
                 </div>
                 <div className="userLoginForm">
                   <Form onSubmit={handleSubmit}>
@@ -215,29 +232,19 @@ const LoginUser = () => {
                     <Link to="/">Sign in</Link>
                   </p>
                 </div>
-              </div>
-              <div className="my-5 otherLogin">
-                <div className="expertLink">
-                  <img src={Profile} alt="expert profile" className="me-3" />
-                  <Link to="/">Expert</Link>
-                </div>
-                <div className="expertLink filterImg">
-                  <img src={Profile} alt="expert profile" className="me-3" />
-                  <Link to="/">Guest</Link>
+                <div className="my-5 otherLogin">
+                  <div className="expertLink">
+                    <img src={Profile} alt="expert profile" className="me-3" />
+                    <Link to="/">Expert</Link>
+                  </div>
+                  <div className="expertLink filterImg">
+                    <img src={Profile} alt="expert profile" className="me-3" />
+                    <Link to="/">Guest</Link>
+                  </div>
                 </div>
               </div>
             </div>
           )}
-          <div className="my-5 otherLogin">
-            <div className="expertLink">
-              <img src={Profile} alt="expert profile" className="me-3" />
-              <Link to="/">Expert</Link>
-            </div>
-            <div className="expertLink filterImg">
-              <img src={Profile} alt="expert profile" className="me-3" />
-              <Link to="/">Guest</Link>
-            </div>
-          </div>
         </div>
       </div>
     </div>

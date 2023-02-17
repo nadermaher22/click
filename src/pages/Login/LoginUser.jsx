@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, CSSProperties } from "react";
+import FadeLoader from "react-spinners/FadeLoader";
 import axios from "axios";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,19 +13,25 @@ import Form from "react-bootstrap/Form";
 import AlternateEmailOutlinedIcon from "@mui/icons-material/AlternateEmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import { toast } from "react-toastify";
 
 const LoginUser = () => {
+  const override: CSSProperties = {
+    display: "block",
+    margin: "auto",
+  };
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loadingInProgress, setLoading] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
   const userRef = useRef();
   useEffect(() => {
-    userRef.current.focus();
+    userRef?.current?.focus();
   }, []);
 
   const ProceedLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     axios
       .post("http://sbtechnology-001-site2.atempurl.com/api/Account/Login", {
         PhoneNumber: email,
@@ -32,11 +39,13 @@ const LoginUser = () => {
         CountryCodeId: "1",
       })
       .then((res) => {
-        console.log("Login is Successful");
         localStorage.setItem("token", "loggedIn");
         navigate("/");
       })
-      .catch((err) => toast.error("Please Enter valid credentials"));
+      .catch((res) => {
+        setLoading(false);
+        setErrMsg(res.response.data.Message);
+      });
   };
 
   return (
@@ -53,65 +62,72 @@ const LoginUser = () => {
           </div>
           <div className="col-md-6">
             <div className="userInfo">
-              <div className="userLoginSocial">
-                <p className="mb-0">Sign in</p>
-                <div className="socialLogin">
-                  <img src={Facebook} alt="facebook" />
-                  <img src={Google} alt="google" />
-                </div>
-                <p className="or">- OR -</p>
-              </div>
-              <div className="userLoginForm">
-                <Form onSubmit={ProceedLogin}>
-                  <Form.Group
-                    className="mb-3 d-flex align-items-center mb-4"
-                    controlId="formBasicEmail"
-                  >
-                    <AlternateEmailOutlinedIcon className="loginFormIcons me-3" />
-                    <Form.Control
-                      type="text"
-                      placeholder="Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="form-control"
-                      ref={userRef}
-                    />
-                  </Form.Group>
+              {loadingInProgress ? (
+                <FadeLoader color={"#000"} cssOverride={override} />
+              ) : (
+                <>
+                  <div className="userLoginSocial">
+                    <p className="mb-0">Sign in</p>
+                    <div className="socialLogin">
+                      <img src={Facebook} alt="facebook" />
+                      <img src={Google} alt="google" />
+                    </div>
+                    <p className="or">- OR -</p>
+                    <p className="invalid">{errMsg}</p>
+                  </div>
+                  <div className="userLoginForm">
+                    <Form onSubmit={ProceedLogin}>
+                      <Form.Group
+                        className="mb-3 d-flex align-items-center mb-4"
+                        controlId="formBasicEmail"
+                      >
+                        <AlternateEmailOutlinedIcon className="loginFormIcons me-3" />
+                        <Form.Control
+                          type="text"
+                          placeholder="Email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="form-control"
+                          ref={userRef}
+                        />
+                      </Form.Group>
 
-                  <Form.Group
-                    className="mb-3 d-flex align-items-center position-relative"
-                    controlId="formBasicPassword"
-                  >
-                    <LockOutlinedIcon className="loginFormIcons me-3" />
+                      <Form.Group
+                        className="mb-3 d-flex align-items-center position-relative"
+                        controlId="formBasicPassword"
+                      >
+                        <LockOutlinedIcon className="loginFormIcons me-3" />
 
-                    <Form.Control
-                      type="password"
-                      placeholder="Password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <VisibilityOffOutlinedIcon className="eyeIcon position-absolute end-0" />
-                  </Form.Group>
-                  <Form.Group className="mb-3 float-end ">
-                    <Link to="/" className="forgotPassword">
-                      Forgot Password?
-                    </Link>
-                  </Form.Group>
-                  <Button className="loginButton" type="submit">
-                    Sign in
-                  </Button>
-                </Form>
-              </div>
-              <div className="newAccount mt-4">
-                <p>
-                  New Account?&nbsp;
-                  <Link to="/">Sign up</Link>
-                </p>
-              </div>
-              <div className="expertLink my-5">
-                <img src={Profile} alt="expert profile" className="me-2" />
-                <Link to="/">Expert</Link>
-              </div>
+                        <Form.Control
+                          type="password"
+                          placeholder="Password"
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <VisibilityOffOutlinedIcon className="eyeIcon position-absolute end-0" />
+                      </Form.Group>
+                      <Form.Group className="mb-3 float-end ">
+                        <Link to="/" className="forgotPassword">
+                          Forgot Password?
+                        </Link>
+                      </Form.Group>
+                      <Button className="loginButton" type="submit">
+                        Sign in
+                      </Button>
+                    </Form>
+                  </div>
+                  <div className="newAccount mt-4">
+                    <p>
+                      New Account?&nbsp;
+                      <Link to="/">Sign up</Link>
+                    </p>
+                  </div>
+                  <div className="expertLink my-5">
+                    <img src={Profile} alt="expert profile" className="me-2" />
+                    <Link to="/loginexpert">Expert</Link>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

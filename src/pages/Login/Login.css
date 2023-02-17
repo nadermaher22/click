@@ -6,8 +6,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 0 1rem;
+  height: 100%;
 }
 .userLoginSocial {
   display: flex;
@@ -42,7 +42,7 @@
   opacity: 0.7;
 }
 .userLoginForm {
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   width: 100%;
 }
 .form-control {
@@ -114,6 +114,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
+  width: 100%;
 }
 .otherLogin img {
   height: 50px;
@@ -205,14 +206,15 @@
   margin: auto;
   text-align: center;
   font-family: "Source Sans Pro", sans-serif;
+  margin-top: 3rem;
 }
 #upper-side {
   padding: 2em;
   background-color: #8bc34a;
   display: block;
   color: #fff;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  margin-top: 2rem;
+  border-radius: 15px;
 }
 #checkmark {
   font-weight: lighter;
@@ -265,7 +267,15 @@
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+.invalid {
+  margin-bottom: 0.5rem;
+  color: red;
+  margin-top: 15px;
+}
 .sucImg {
+  width: 100%;
+  height: 187px;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
