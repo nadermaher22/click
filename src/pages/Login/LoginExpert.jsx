@@ -39,12 +39,12 @@ const LoginUser = () => {
         CountryCodeId: "1",
       })
       .then((res) => {
-        localStorage.setItem("token", "loggedIn");
+        localStorage.setItem("token", res.data.token);
         navigate("/");
       })
       .catch((res) => {
         setLoading(false);
-        setErrMsg(res.response.data.Message);
+        setErrMsg(res.data.Message);
       });
   };
 

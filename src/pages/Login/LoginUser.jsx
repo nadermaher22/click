@@ -25,6 +25,7 @@ const LoginUser = () => {
   const [loadingInProgress, setLoading] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const userRef = useRef();
+
   useEffect(() => {
     userRef?.current?.focus();
   }, []);
@@ -33,18 +34,20 @@ const LoginUser = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post("http://sbtechnology-001-site2.atempurl.com/api/Account/Login", {
+      .post("Account/Login", {
         PhoneNumber: email,
         Password: password,
         CountryCodeId: "1",
       })
       .then((res) => {
-        localStorage.setItem("token", "loggedIn");
+        console.log(res.data);
+        localStorage.setItem("token", res.data.token);
         navigate("/");
       })
       .catch((res) => {
         setLoading(false);
-        setErrMsg(res.response.data.Message);
+        setErrMsg(res.response);
+        console.log(res);
       });
   };
 
@@ -83,8 +86,8 @@ const LoginUser = () => {
                       >
                         <AlternateEmailOutlinedIcon className="loginFormIcons me-3" />
                         <Form.Control
-                          type="text"
-                          placeholder="Email"
+                          type="number"
+                          placeholder="Phone Number"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           className="form-control"

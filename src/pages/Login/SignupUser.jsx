@@ -87,7 +87,7 @@ const LoginUser = () => {
           </div>
           {registerSuccess ? (
             <div className="col-md-6">
-              <div id="card" class="animated fadeIn">
+              <div id="card" className="animated animate__fadeIn">
                 <img
                   src={CheckSuccess}
                   alt="success"
