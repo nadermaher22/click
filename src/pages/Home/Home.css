@@ -25,6 +25,30 @@
   width: 25px;
   margin-left: 10px;
 }
+.heroBackground {
+  background-image: url("../../assests/img/HomeSlider.png");
+  background-repeat: no-repeat;
+}
+.heroBanner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ffff;
+  bottom: 0;
+  right: 0;
+  border-radius: 400px;
+}
+/* .heroAfter::before {
+
+} */
 /* about ClickTick */
 .heading p {
   color: #545454;
@@ -33,10 +57,31 @@
   line-height: 86px;
 }
 .about-img {
+  position: relative;
   display: block;
   margin: auto;
   height: 300px;
 }
+.imgBefore:before {
+  position: absolute;
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  top: 30%;
+  border: 3px solid rgba(0, 0, 86, 1);
+}
+.imgBefore:after {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(0, 0, 86, 1);
+  border-radius: 50%;
+  bottom: 26%;
+  right: 85px;
+}
+
 .aboutRight {
   width: 75%;
 }
@@ -45,6 +90,28 @@
   color: #545454;
   font-weight: 600;
   font-size: 24px;
+}
+.aboutRight .firstLine span {
+  color: #000056;
+  font-weight: bold;
+}
+.aboutRight ul {
+  list-style: none;
+  padding: 0rem 1rem;
+}
+.aboutRight ul li {
+  padding-left: 0.9rem;
+}
+.aboutRight ul li::marker {
+  content: "\2022";
+  color: #03be6c;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  /* margin-left: -1em; */
+  font-size: 25px;
+  position: relative;
+  left: -12px;
 }
 .clickDetails {
   margin-bottom: 1.5rem;
@@ -93,6 +160,34 @@
   font-size: 14px;
   line-height: 24px;
   color: rgba(95, 95, 95, 0.87);
+}
+.serviceCounter {
+  color: #313131;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 90px;
+  position: relative;
+}
+.serviceCounter p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 39px;
+  color: #313131;
+}
+.serviceCounter span {
+  position: absolute;
+  left: 27%;
+}
+.serviceCounter img {
+  margin-right: 10px;
+}
+.serviceCounter img {
+  position: absolute;
+  z-index: -1;
+  top: 16px;
+  right: 60%;
 }
 
 /* partners */
@@ -166,9 +261,18 @@
 .experts {
   display: flex;
   gap: 40px;
+  background-color: #000056;
 }
 .experts .slick-list {
   padding: 0 20% 0 0 !important;
+}
+.recomExperts {
+  font-size: 26px;
+}
+.expertsHeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .expertsHeading p {
   margin-bottom: 0;
@@ -176,6 +280,26 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 86px;
+}
+.experts .seeAll {
+  color: #ffffff !important;
+  opacity: 0.7;
+  font-size: 20px;
+}
+.experts .slick-dots li button:before {
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+  color: white;
+  font-size: 16px;
+  opacity: 0.3;
+}
+.slick-dots li.slick-active button:before {
+  color: white !important;
+  font-size: 16px;
+}
+/* partners */
+.homePartners {
+  background: linear-gradient(90.49deg, #2c2c2c 7.52%, #303030 96.74%);
 }
 /* media query */
 @media (max-width: 768px) {
@@ -221,5 +345,12 @@
   .mb1Mob {
     margin-bottom: 1rem !important;
     padding-right: 0;
+  }
+  .expertsHeading {
+    display: block;
+  }
+  .expertsHeading .seeAll {
+    text-align: center !important;
+    transform: translate(-195%, -13px);
   }
 }

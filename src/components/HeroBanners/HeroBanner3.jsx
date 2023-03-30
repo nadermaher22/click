@@ -1,6 +1,5 @@
 import React from "react";
 import "./HeroBanner.css";
-import Mac from "../../assests/img/Mac.png";
 import { Link } from "react-router-dom";
 
 const HeroBanner = () => {
@@ -9,7 +8,7 @@ const HeroBanner = () => {
       <section className="hero">
         <div className="container mbCust">
           <div className="row">
-            <div className="col-md-5 order2Mob">
+            <div className="col-md-7 order2Mob afterCircle3 ms-5">
               <div className="mt-5 d-flex mt1Mob justMob">
                 <p className="m-0 d-flex text-white align-items-left flex-column fs-18 me-1">
                   <span className="mt-2">up</span>
@@ -26,15 +25,15 @@ const HeroBanner = () => {
               </div>
               <Link to="/shop">
                 <button className="orderBtn">
-                  <span className="mb-0 oderFont">Order Now</span>
+                  <span className="mb-0 oderFont">Learn More</span>
                 </button>
               </Link>
             </div>
-            <div className="col-md-7">
+            {/* <div className="col-md-7">
               <div className="heroImg mt-5 macAfter macImg">
                 <img src={Mac} alt="hero" className="macImg p30Mob" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

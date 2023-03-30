@@ -1,14 +1,13 @@
 import React from "react";
 import "./HeroBanner.css";
-import Tablet from "../../assests/img/Tablet.png";
 import { Link } from "react-router-dom";
 const HeroBanner2 = () => {
   return (
     <>
-      <section className="hero tabletBg">
+      <section className="hero">
         <div className="container mbCust">
           <div className="row">
-            <div className="col-md-5 order2Mob">
+            <div className="col-md-5 order2Mob afterCircle2 ms-5">
               <div className="mt-5 d-flex mt1Mob justMob">
                 <p className="m-0 d-flex text-white align-items-left flex-column fs-18 me-1 ">
                   <span className="mt-2 tablet">up</span>
@@ -25,15 +24,15 @@ const HeroBanner2 = () => {
               </div>
               <Link to="/shop">
                 <button className="orderBtn tabletBtn">
-                  <span className="mb-0 oderFont">Order Now</span>
+                  <span className="mb-0 oderFont">Learn more</span>
                 </button>
               </Link>
             </div>
-            <div className="col-md-7">
+            {/* <div className="col-md-7">
               <div className="heroImg mt-3 tabletAfter">
                 <img src={Tablet} alt="tablet" className="w-100 p30Mob" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

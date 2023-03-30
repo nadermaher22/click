@@ -8,7 +8,16 @@
   color: rgba(45, 45, 45, 1);
   font-weight: 500;
 }
+.navBarCust {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
+.navbar-nav {
+  text-align: center;
+  gap: 20px;
+}
 .gap15 {
   gap: 15px;
 }
