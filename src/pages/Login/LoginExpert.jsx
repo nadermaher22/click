@@ -36,7 +36,7 @@ const LoginUser = () => {
       .post("http://sbtechnology-001-site2.atempurl.com/api/Account/Login", {
         PhoneNumber: email,
         Password: password,
-        CountryCodeId: "1",
+        CountryCodeId: "3",
       })
       .then((res) => {
         localStorage.setItem("token", res.data.token);

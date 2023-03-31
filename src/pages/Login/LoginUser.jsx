@@ -37,7 +37,7 @@ const LoginUser = () => {
       .post("Account/Login", {
         PhoneNumber: email,
         Password: password,
-        CountryCodeId: "1",
+        CountryCodeId: "3",
       })
       .then((res) => {
         console.log(res.data);
